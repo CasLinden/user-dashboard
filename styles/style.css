@@ -10,6 +10,7 @@ html {
 :root {
     --base: #fff5e0;
     --accent: #1a0b08;
+    --accent2: #d34c2d;
     --sub: #e3dfdc;
 }
 
@@ -21,7 +22,8 @@ html {
 .wrapper {
     height: 100vh;
     width: 100vw;
-    grid-template: 150px 1fr / 250px 1fr;
+    max-width: 100%;
+    grid-template: 200px 1fr / 250px 1fr;
     grid-template-areas: 
     "dashboard header"
     "dashboard content"
@@ -65,7 +67,7 @@ html {
 
 .header {
     grid-area: header;
-    grid-template: 1fr 1.3fr / 1.6fr 1fr;
+    grid-template: 1fr 1.4fr / 1.6fr 1fr;
     /* grid-template-areas:
     "searchbar account-notifications"
     "greeting acction-buttons" */
@@ -73,9 +75,10 @@ html {
 
 .header-item{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
+  padding-left: 3rem;
 }
 
 .searchbar > input{
@@ -88,22 +91,60 @@ html {
 }
 
 .account-notifications{
+    min-height: 56px;
     color: var(--accent);
     gap: 30px;
     height: 100%;
     width: 100%;
     font-size: 24px;
     font-weight: 900;
-    
+    justify-content: flex-end;
+    padding-right: 3rem;
 
 }
 
 .avatar{
-    width: 55px;
+    height: 50%;
 }
 
 
-.header > div{
-    outline: solid black;
+.greeting {
+    min-height: 84px; /* somehow allows me to scale image to container height using a %*/
+    justify-content: flex-start;
+    padding-left: 3rem;
 }
 
+.greeting > img {
+    height: 75%;
+}
+.greeting-text{
+    font-size: 28px;
+    color: var(--accent);
+    display: flex;
+    flex-direction: column;
+}
+
+span{
+    font-size: 24px;
+}
+
+.smalltext{
+    font-size: 18px;
+}
+
+.buttons-container{
+    justify-content: flex-end;
+    padding-right: 3rem;
+    gap: 1.5rem;
+}
+
+.action-button{
+    all:unset;
+    width: clamp(70px, 18%, 100px);
+    background-color: #d34c2d;
+    padding: 15px 15px 15px 15px;
+    border-radius: 25px;
+    color: var(--base);
+    font-weight: 900;
+    text-align: center;
+}
