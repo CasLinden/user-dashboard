@@ -32,15 +32,11 @@ html {
     background: var(--sub);
 }
 
-#page-header{
+#dashboard-top{
     font-size: 36px;
     gap: 0.2em;
     padding:8px 0px;
     margin-top: 5px;
-}
-
-#page-title{
-    margin-top: 4px;
 }
 
 .dashboard {
@@ -62,11 +58,52 @@ html {
 }
 
 .icon {
+    color: var(--accent);
     margin-left: 10px;
     
 }
 
 .header {
     grid-area: header;
+    grid-template: 1fr 1.3fr / 1.6fr 1fr;
+    /* grid-template-areas:
+    "searchbar account-notifications"
+    "greeting acction-buttons" */
+}
+
+.header-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchbar > input{
+    width: 80%;
+    height: 40%;
+    align-self: center;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--sub);
+}
+
+.account-notifications{
+    color: var(--accent);
+    gap: 30px;
+    height: 100%;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 900;
+    
+
+}
+
+.avatar{
+    width: 55px;
+}
+
+
+.header > div{
+    outline: solid black;
 }
 
