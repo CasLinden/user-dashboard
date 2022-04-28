@@ -162,7 +162,8 @@ span{
 
 
 .content{
-    grid-template: auto / 1fr .6fr;
+    padding-right: 15px;
+    grid-template: auto / 1fr .7fr;
     grid-template-areas:
     "Projects Side"
 }
